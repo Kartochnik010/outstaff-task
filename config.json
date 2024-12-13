@@ -1,0 +1,18 @@
+{
+  "dsn": "postgresql://postgres:postgres@localhost:5432",
+  "remote_db": "postgresql://neondb_owner:I0QR2eGOhlZU@ep-little-glade-a5d6wo0u-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require",
+  "port": 8080,
+  "limiter": {
+    "rps": 100,
+    "burst": 100,
+    "enabled": true
+  },
+  "http_client": {
+    "request_timeout": 1000
+  },
+  "log": {
+    "level": "debug",
+    "format": "error"
+  },
+  "music_api_base_url": "http://localhost:8081"
+}

@@ -1,0 +1,67 @@
+###
+# Добавление новой песни в формате json
+POST http://localhost:8080/music/save
+Content-Type: application/json
+
+{
+    "group": "Muse",
+    "song": "Supermassive"
+}
+
+###
+# Получение данных библиотеки
+GET http://localhost:8080/music?id=1
+
+###
+# Получение данных библиотеки
+GET http://localhost:8080/music?group=Muse
+
+###
+# Получение данных библиотеки с фильтрацией по всем полям 
+GET http://localhost:8080/music?song=World&&group=Hello
+
+###
+# Получение данных библиотеки с фильтрацией по всем полям 
+GET http://localhost:8080/music?group=Hello
+
+
+###
+# Получение данных библиотеки с фильтрацией по всем полям и пагинацией
+GET http://localhost:8080/music?limit=10&&page=1
+
+
+###
+# Получение данных библиотеки c пагинацией
+GET http://localhost:8080/music?limit=10&&page=2
+
+###
+# Удаление песни
+DELETE http://localhost:8080/music/delete/13
+
+###
+# Изменение данных песни
+PUT http://localhost:8080/music/edit/1
+Content-Type: application/json
+
+{
+    "group": "Hello",
+    "song": "World",
+    "link": "[REMOVED]",
+    "releaseDate": "01.01.2006",
+    "text": "[REMOVED]"
+}
+
+###
+# Изменение данных песни
+PUT http://localhost:8080/music/edit/2
+Content-Type: application/json
+
+{
+    "group": "Hello",
+    "song": "[REMOVED]",
+    "link": "[REMOVED]",
+    "releaseDate": "01.01.2006",
+    "text": "[REMOVED]"
+}
+
+## Получение текста песни с пагинацией по куплетам
